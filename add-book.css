@@ -1,0 +1,123 @@
+/* ===== Two Column Layout ===== */
+.two-column-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* left form narrower, archive wider */
+    gap: 30px;
+}
+
+/* ===== Left Column: Form ===== */
+#add-book-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+    height: 70vh;
+}
+
+/* ===== Left Column Form Styling ===== */
+#add-book-form input,
+#add-book-form select {
+    width: 90%;
+    padding: 12px 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}   
+
+#add-book-form input:focus,
+#add-book-form select:focus {
+    border-color: #004080;
+    box-shadow: 0 0 5px rgba(0, 64, 128, 0.3);
+    outline: none;
+}
+
+#add-book-form label {
+    font-weight: 500;
+    margin-top: 10px;
+    display: block;
+}
+
+#add-book-form button {
+    width: 96%;
+    padding: 12px;
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-book-form button:hover {
+    background-color: #0066cc;
+}
+
+/* ===== Right Column: Archive ===== */
+#library-archive {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+    height: 70vh;
+}
+
+/* Optional: make table full width inside archive */
+#archiveDisplay table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#archiveDisplay th,
+#archiveDisplay td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Responsive: stack columns on smaller screens */
+@media (max-width: 900px) {
+    .two-column-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Scrollable Archive Container ===== */
+#archiveDisplay {
+    max-height: 450px;          /* limit height */
+    overflow-y: auto;           /* vertical scroll if needed */
+    overflow-x: auto;           /* horizontal scroll if table is wide */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    box-sizing: border-box;     /* ensure padding included in size */
+}
+
+/* Table inside container */
+#archiveDisplay table {
+    width: 100%;                /* take full width of container */
+    border-collapse: collapse;
+    table-layout: fixed;        /* prevent columns from stretching too wide */
+}
+
+/* Table cells */
+#archiveDisplay th,
+#archiveDisplay td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    word-wrap: break-word;      /* prevent overflow text */
+}
+
+/* Optional: make header sticky */
+#archiveDisplay th {
+    position: sticky;
+    top: 0;
+    background-color: #004080;
+    z-index: 1;
+}

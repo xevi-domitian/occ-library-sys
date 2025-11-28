@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OCC: Library System</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="add-book.css">
+    
+</head>
+
+<body>
+    <nav>
+        <img src="occ_logo_transparent.png" alt="OCC Logo" id="logo">
+        <h1>OCC: Library System </h2>
+            <a href="view-archive.html"> View Archive </a>
+            <a href="add-book.html"> Add Book </a>
+            <a href="remove-book.html"> Remove Book </a>
+            <a href="add-copy.html"> Add Copy</a>
+            <a href="remove-copy.html"> Remove Copy</a>
+            <a href="edit-book.html"> Edit Book</a>
+            <a href=""> Log-out </a>
+    </nav>
+
+    <main>
+        <div class="two-column-container">
+
+            <!-- Left Column: Add Book Form -->
+            <section id="add-book-form">
+                <form id="addBookForm">
+                    <h2>Add New Book</h2>
+
+                    <label for="bookTitle">Title:</label>
+                    <input type="text" id="bookTitle" placeholder="Book Title" required>
+
+                    <label for="bookAuthor">Author:</label>
+                    <input type="text" id="bookAuthor" placeholder="Book Author">
+
+                    <label for="numCopies">Number of Copies:</label>
+                    <input type="number" id="numCopies" placeholder="Enter No. of Copies" min="1" required>
+
+                    <label for="shelfSelect">Shelf Location:</label>
+                    <select id="shelfSelect" required>
+                        <option value="Shelf 1">Capstone/Thesis</option>
+                        <option value="Shelf 2">BS Information Tech.</option>
+                        <option value="Shelf 3">BS Business Administration</option>
+                        <option value="Shelf 4">BS Elementary Educ.</option>
+                        <option value="Shelf 5">BS Secondary Educ.</option>
+                    </select>
+
+                    <button type="submit">Add Book</button>
+                </form>
+            </section>
+
+            <!-- Right Column: Library Archive -->
+            <section id="library-archive">
+                <div id="archiveDisplay"></div>
+            </section>
+
+        </div>
+    </main>
+
+
+
+</body>
+
+<script src="core.js"></script>
+
+</html>
