@@ -1,0 +1,144 @@
+/* ===== Two Column Layout ===== */
+.two-column-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Left form narrower, archive wider */
+    gap: 30px;
+    align-items: start;
+}
+
+/* ===== Left Column: Edit Book Form ===== */
+#edit-book-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#edit-book-section h2 {
+    margin-bottom: 20px;
+    color: #004080;
+}
+
+#edit-book-section label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+#edit-book-section input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#edit-book-section input:focus {
+    border-color: #004080;
+    box-shadow: 0 0 5px rgba(0,64,128,0.3);
+    outline: none;
+}
+
+#edit-book-section button {
+    width: 100%;
+    padding: 12px;
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#edit-book-section button:hover {
+    background-color: #0066cc;
+}
+
+#edit-book-section select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}   
+
+
+
+
+/* ===== Right Column: Archive Display ===== */
+#library-archive {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Scrollable archive container */
+#archiveDisplay {
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Table styling */
+#archiveDisplay table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#archiveDisplay th,
+#archiveDisplay td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+#archiveDisplay th {
+    position: sticky;
+    top: 0;
+    background-color: #004080;
+    color: #fff;
+    z-index: 1;
+}
+
+/* Status colors */
+td.status {
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-available {
+    color: #0a8a0a; /* green */
+}
+
+.status-unavailable {
+    color: #d00; /* red */
+}
+
+/* ===== Responsive: stack columns on smaller screens ===== */
+@media (max-width: 900px) {
+    .two-column-container {
+        grid-template-columns: 1fr;
+    }
+
+    #edit-book-section, #library-archive {
+        margin-bottom: 20px;
+    }
+}

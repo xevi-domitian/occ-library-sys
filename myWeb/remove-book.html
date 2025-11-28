@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>OCC: Remove Book</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="remove-book.css">
+</head>
+<body>
+    <nav>
+        <img src="occ_logo_transparent.png" alt="OCC Logo" id="logo">
+        <h1>OCC: Library System </h2>
+            <a href="view-archive.html"> View Archive </a>
+            <a href="add-book.html"> Add Book </a>
+            <a href="remove-book.html"> Remove Book </a>
+            <a href="add-copy.html"> Add Copy</a>
+            <a href="remove-copy.html"> Remove Copy</a>
+            <a href="edit-book.html"> Edit Book</a>
+            <a href=""> Log-out </a>
+    </nav>
+    <main>  
+        <div class="two-column-container">
+
+            <!-- Left Column: Remove Book Form -->
+            <section id="remove-book-form">
+                <form id="removeBookForm">
+                    <h2>Remove Book</h2>
+
+                    <label for="removeBookID">Book ID:</label>
+                    <input type="text" id="removeBookID" placeholder="Enter Book ID" required>
+
+                    <button type="submit">Remove Book</button>
+                </form>
+            </section>
+
+            <!-- Right Column: Library Archive -->
+            <section id="library-archive">
+                <div id="archiveDisplay"></div>
+            </section>
+
+        </div>
+    </main>
+
+<script src="core.js"></script>
+
+
+
+</body>
+</html>
